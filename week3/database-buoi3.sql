@@ -1,0 +1,33 @@
+-- SQL file for Laptop Shop Management System 
+-- Database: LaptopShop2
+-- Table: laptops_alt
+
+-- Create database
+CREATE DATABASE IF NOT EXISTS `LaptopShop2` 
+  DEFAULT CHARACTER SET utf8mb4 
+  COLLATE utf8mb4_unicode_ci;
+USE `LaptopShop2`;
+
+-- Create table for laptop data 
+CREATE TABLE IF NOT EXISTS `laptops_alt` (
+  `model` VARCHAR(150) NOT NULL,
+  `brand` VARCHAR(100) NOT NULL,
+  `storage` VARCHAR(100),
+  `ram` VARCHAR(50),
+  `cpu` VARCHAR(100),
+  `quantity` INT(11) DEFAULT 0,
+  `price` DECIMAL(10,2) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB 
+  DEFAULT CHARSET=utf8mb4 
+  COLLATE=utf8mb4_unicode_ci;
+
+-- Insert sample data 
+INSERT INTO `laptops_alt` 
+(`model`, `brand`, `storage`, `ram`, `cpu`, `quantity`, `price`) VALUES
+('XPS 13', 'Dell', '512GB SSD', '16GB', 'Intel Core i7', 10, 1500.00),
+('MacBook Air M2', 'Apple', '256GB SSD', '8GB', 'Apple M2', 5, 1200.00),
+('ROG Zephyrus G14', 'Asus', '1TB SSD', '32GB', 'AMD Ryzen 9', 3, 1800.00),
+('Spectre x360', 'HP', '512GB SSD', '8GB', 'Intel Core i5', 7, 1100.00),
+('ThinkPad X1 Carbon', 'Lenovo', '1TB SSD', '16GB', 'Intel Core i7', 4, 1700.00);
